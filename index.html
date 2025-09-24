@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>E-Classroom by Danish</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>E-Classroom</h1>
+    <p>Smart Learning Tools by Danish</p>
+  </header>
+
+  <nav>
+    <button onclick="showSection('overview')">Overview</button>
+    <button onclick="showSection('dashboard')">Dashboard</button>
+    <button onclick="showSection('upload')">Upload</button>
+    <button onclick="showSection('contact')">Contact</button>
+  </nav>
+
+  <main>
+    <section id="overview">
+      <h2>Overview</h2>
+      <p>This offline-ready platform delivers learning materials, assignments, and smart tools — hosted directly from ESP32.</p>
+    </section>
+
+    <section id="dashboard" style="display:none;">
+      <h2>Dashboard</h2>
+      <label for="subjectSelect">Choose Subject:</label>
+      <select id="subjectSelect" onchange="renderDashboard()">
+        <option value="physics">Physics</option>
+        <option value="chemistry">Chemistry</option>
+        <option value="math">Math</option>
+      </select>
+      <div id="dashboardContent"></div>
+    </section>
+
+    <section id="upload" style="display:none;">
+      <h2>Upload Learning Material</h2>
+      <input type="file" id="fileInput" />
+      <div id="previewArea"></div>
+    </section>
+
+    <section id="contact" style="display:none;">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:danish@example.com">danish@example.com</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 E-Classroom by Danish</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
