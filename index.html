@@ -13,19 +13,19 @@
   </header>
 
   <nav>
-    <button onclick="showSection('overview')">Overview</button>
-    <button onclick="showSection('dashboard')">Dashboard</button>
-    <button onclick="showSection('upload')">Upload</button>
-    <button onclick="showSection('contact')">Contact</button>
+    <button onclick="showSection('overview', event)">Overview</button>
+    <button onclick="showSection('dashboard', event)">Dashboard</button>
+    <button onclick="showSection('upload', event)">Upload</button>
+    <button onclick="showSection('contact', event)">Contact</button>
   </nav>
 
   <main>
-    <section id="overview">
+    <section id="overview" class="active">
       <h2>Overview</h2>
-      <p>This offline-ready platform delivers learning materials, assignments, and smart tools — hosted directly from ESP32.</p>
+      <p>This offline-ready platform delivers learning materials, assignments, and smart tools — hosted directly from ESP32 or SSD.</p>
     </section>
 
-    <section id="dashboard" style="display:none;">
+    <section id="dashboard">
       <h2>Dashboard</h2>
       <label for="subjectSelect">Choose Subject:</label>
       <select id="subjectSelect" onchange="renderDashboard()">
@@ -36,13 +36,13 @@
       <div id="dashboardContent"></div>
     </section>
 
-    <section id="upload" style="display:none;">
+    <section id="upload">
       <h2>Upload Learning Material</h2>
       <input type="file" id="fileInput" />
       <div id="previewArea"></div>
     </section>
 
-    <section id="contact" style="display:none;">
+    <section id="contact">
       <h2>Contact</h2>
       <p>Email: <a href="mailto:danish@example.com">danish@example.com</a></p>
     </section>
