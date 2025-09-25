@@ -1,7 +1,10 @@
-function showSection(id) {
+function showSection(id, event) {
   const sections = document.querySelectorAll("main section");
-  sections.forEach(sec => sec.style.display = "none");
-  document.getElementById(id).style.display = "block";
+  sections.forEach(sec => sec.classList.remove("active"));
+  document.getElementById(id).classList.add("active");
+
+  document.querySelectorAll("nav button").forEach(btn => btn.classList.remove("active"));
+  if (event) event.target.classList.add("active");
 
   if (id === "dashboard") renderDashboard();
 }
@@ -49,11 +52,11 @@ document.addEventListener("DOMContentLoaded", () => {
       const url = URL.createObjectURL(file);
 
       if (file.type === "application/pdf") {
-        preview.innerHTML = `<iframe src="${url}" width="100%" height="500px"></iframe>`;
+        preview.innerHTML = `<iframe src="${url}" height="500px"></iframe>`;
       } else if (file.type.startsWith("image/")) {
-        preview.innerHTML = `<img src="${url}" style="max-width:100%;"/>`;
+        preview.innerHTML = `<img src="${url}" />`;
       } else if (file.type.startsWith("video/")) {
-        preview.innerHTML = `<video width="100%" controls><source src="${url}" type="${file.type}"></video>`;
+        preview.innerHTML = `<video controls><source src="${url}" type="${file.type}"></video>`;
       } else {
         preview.innerHTML = `<p>Selected file: ${file.name}</p>`;
       }
